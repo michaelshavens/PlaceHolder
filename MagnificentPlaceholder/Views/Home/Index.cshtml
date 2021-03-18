@@ -1,0 +1,29 @@
+﻿<script>$(document).ready(() => {
+        fetch(apiBaseUrl + 'albums')
+            .then(response => response.json())
+            .then(json => {
+                json
+                    .slice(0, 10)
+                    .forEach((x) => {
+                        $('#albums').append()
+                    });
+            }).catch(function (error) {
+                alert("An error has occured. Please refresh the page and try again.");
+            })
+    });</script>
+<h2>Michael Havens' Magnificent Placeholders</h2>
+<form action="/search/PerformSearch">
+    <div class="row">
+        <div class="col-xs-12 col-md-8">
+            <div class="form-group">
+                <label for="search">Search</label>
+                <input name="searchText" type="text" class="form-control"  placeholder="Search for album title or username">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-md-8">
+            <button type="submit" formmethod="post">Search</button>
+        </div>
+    </div>
+</form>
